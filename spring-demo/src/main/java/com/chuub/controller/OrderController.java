@@ -10,7 +10,8 @@ import com.chuub.request.Order;
 import com.chuub.service.OrderService;
 
 import jakarta.validation.Valid;
-
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @RestController
 public class OrderController { //receive http request
 	@Autowired
@@ -22,6 +23,7 @@ public class OrderController { //receive http request
 	
 	@PostMapping("/order") //path
 	Order saveOrder(@RequestBody @Valid Order order) {
+		log.debug("logger added");
 		service.insertOrder(order);
 		return order;
 	}
