@@ -50,7 +50,7 @@ Code
 Configure Client: In your client application's bootstrap.properties or bootstrap.yml (which loads before application.properties), specify the Config Server's URI and the application name.
 Code
 
-    spring.cloud.config.uri=http://localhost:8888 # Or your Config Server's actual address
+    spring.config.import=optional:configserver:http://localhost:8888
     spring.application.name=my-service
     spring.profiles.active=dev # Optional: specify a profile for environment-specific configs
 Access Properties: Access configuration properties in your client applications as usual using @Value or Environment object.
